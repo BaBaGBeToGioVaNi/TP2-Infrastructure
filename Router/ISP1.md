@@ -57,7 +57,7 @@ no shutdown
 ! Link to Group 2
 interface GigabitEthernet4/0
 description P2P Link to B22
-ip address 100.121.2.1 255.255.255.252
+ip address 100.121.1.5 255.255.255.252
 no ip directed-broadcast
 no ip redirects
 no ip proxy-arp
@@ -68,8 +68,8 @@ no shutdown
 !
 ! Link to Group 3
 interface GigabitEthernet5/0
-description P2P Link to B12
-ip address 100.121.3.1 255.255.255.252
+description P2P Link to B32
+ip address 100.121.1.9 255.255.255.252
 no ip directed-broadcast
 no ip redirects
 no ip proxy-arp
@@ -83,11 +83,11 @@ ip route 100.68.1.0 255.255.255.0 100.121.1.2
 ipv6 route 2001:db8:1::/48 2001:18:0:10::1
 !
 ! Routes to Group 2
-ip route 100.68.2.0 255.255.255.0 100.121.2.2
+ip route 100.68.2.0 255.255.255.0 100.121.1.6
 ipv6 route 2001:db8:2::/48 2001:18:0:11::1
 !
 ! Routes to Group 3
-ip route 100.68.3.0 255.255.255.0 100.121.3.2
+ip route 100.68.3.0 255.255.255.0 100.121.1.10
 ipv6 route 2001:db8:3::/48 2001:18:0:12::1
 !
 ! Routes to Group 4
