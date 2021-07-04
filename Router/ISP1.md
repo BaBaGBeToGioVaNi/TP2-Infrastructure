@@ -1,5 +1,7 @@
 ## Configuration de ISP1
 ```console
+enable
+conf t
 hostname ISP1
 aaa new-model
 aaa authentication login default local
