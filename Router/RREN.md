@@ -1,4 +1,6 @@
 ```console
+en
+conf t
 hostname RREN
 aaa new-model
 aaa authentication login default local
@@ -100,4 +102,6 @@ neighbor 2001:DB8:FFFF:1::2 activate
 !
 ip route 100.100.0.0 255.255.0.0 null0
 ipv6 route 2001:10::/32 null0
+end
+write memory
 ```
