@@ -187,3 +187,30 @@ ip route 0.0.0.0 0.0.0.0 10.10.0.254
 ip route 100.121.0.0 255.255.0.0 null0
 ipv6 route 2001:18::/32 null0
 ```
+
+```console
+configure terminal
+interface GigabitEthernet2/0
+description P2P Link to NREN1
+ip address 100.101.2.2 255.255.255.252
+no ip redirects
+no ip proxy-arp
+ipv6 address 2001:11:0:20::1/127
+ipv6 nd prefix default no-advertise
+ipv6 nd ra suppress all
+no shutdown
+!
+router bgp 121
+address-family ipv4
+neighbor 100.101.2.1 remote-as 101
+neighbor 100.101.2.1 description eBGP with NREN1 (AS101)
+neighbor 100.101.2.1 password NSRC-BGP
+neighbor 100.101.2.1 activate
+!
+address-family ipv6
+neighbor 2001:11:0:20:: remote-as 101
+neighbor 2001:11:0:20:: description eBGP with NREN1 (AS101)
+neighbor 2001:11:0:20:: password NSRC-BGP
+neighbor 2001:11:0:20:: activate
+!
+```
