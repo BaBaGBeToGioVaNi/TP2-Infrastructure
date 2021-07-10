@@ -115,6 +115,14 @@ ipv6 route 2001:18::/32 null0
 ```
 
 ```console
+no ip route 100.68.1.0 255.255.255.0 100.121.1.2
+no ip route 100.68.2.0 255.255.255.0 100.121.1.6
+no ip route 100.68.3.0 255.255.255.0 100.121.1.10
+!
+no ipv6 route 2001:db8:1::/48 2001:18:0:10::1
+no ipv6 route 2001:db8:2::/48 2001:18:0:11::1
+no ipv6 route 2001:db8:3::/48 2001:18:0:12::1
+!
 ! Filters for Group 1
 ip prefix-list AS10-in permit 100.68.1.0/24
 ipv6 prefix-list AS10-v6-in permit 2001:db8:1::/48
