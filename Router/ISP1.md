@@ -150,7 +150,18 @@ neighbor 100.121.1.2 remote-as 10
 neighbor 100.121.1.2 description eBGP with AS10
 neighbor 100.121.1.2 password NSRC-BGP
 neighbor 100.121.1.2 prefix-list AS10-in in
-neighbor 100.121.1.2 activate (repeat for AS20 and AS30)
+neighbor 100.121.1.2 activate
+neighbor 100.121.1.6 remote-as 20
+neighbor 100.121.1.6 description eBGP with AS20
+neighbor 100.121.1.6 password NSRC-BGP
+neighbor 100.121.1.6 prefix-list AS20-in in
+neighbor 100.121.1.6 activate 
+neighbor 100.121.1.10 remote-as 30
+neighbor 100.121.1.10 description eBGP with AS30
+neighbor 100.121.1.10 password NSRC-BGP
+neighbor 100.121.1.10 prefix-list AS30-in in
+neighbor 100.121.1.10 activate 
+
 neighbor 100.127.1.2 remote-as 122
 neighbor 100.127.1.2 description eBGP with ISP2 (AS122)
 neighbor 100.127.1.2 password NSRC-BGP
@@ -171,7 +182,18 @@ neighbor 2001:18:0:10::1 remote-as 10
 neighbor 2001:18:0:10::1 description eBGP with AS10
 neighbor 2001:18:0:10::1 password NSRC-BGP
 neighbor 2001:18:0:10::1 prefix-list AS10-v6-in in
-neighbor 2001:18:0:10::1 activate (repeat for AS20 and AS30)
+neighbor 2001:18:0:10::1 activate 
+neighbor 2001:18:0:11::1 remote-as 20
+neighbor 2001:18:0:11::1 description eBGP with AS20
+neighbor 2001:18:0:11::1 password NSRC-BGP
+neighbor 2001:18:0:11::1 prefix-list AS20-v6-in in
+neighbor 2001:18:0:11::1 activate
+neighbor 2001:18:0:12::1 remote-as 30
+neighbor 2001:18:0:12::1 description eBGP with AS30
+neighbor 2001:18:0:12::1 password NSRC-BGP
+neighbor 2001:18:0:12::1 prefix-list AS30-v6-in in
+neighbor 2001:18:0:12::1 activate
+
 neighbor 2001:DB8:FFFF:1::2 remote-as 122
 neighbor 2001:DB8:FFFF:1::2 description eBGP with ISP2 (AS122)
 neighbor 2001:DB8:FFFF:1::2 password NSRC-BGP
